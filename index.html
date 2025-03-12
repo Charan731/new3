@@ -1,128 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay 1 Rupee</title>
-    <style>
-        body { 
-            background: linear-gradient(to right, #ff758c, #ff7eb3);
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            padding: 20px;
-            max-width: 400px;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        h1 {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            background: linear-gradient(to right, #ff512f, #dd2476);
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
-            text-align: center;
-            width: 100%;
-        }
-        .section {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
-            margin-top: 20px;
-            text-align: center;
-            width: 100%;
-        }
-        .note, .description, .footer {
-            background: rgba(0,0,0,0.8);
-            color: white;
-        }
-        .balance {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ff512f;
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            margin-top: 15px;
-        }
-        button {
-            background-color: #ff512f;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .footer a {
-            display: block;
-            margin: 8px 0;
-            text-decoration: none;
-            font-weight: bold;
-            color: #ff512f;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay 1 Rupee</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 420px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .section {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .balance {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ff512f;
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      margin-top: 15px;
+    }
+
+    button {
+      background-color: #ff512f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .note-section {
+      background: #fef0f3;
+      color: #333;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-top: 25px;
+    }
+
+    .note-section h2 {
+      color: #ff512f;
+      margin-bottom: 10px;
+    }
+
+    .note-section p {
+      margin: 6px 0;
+      line-height: 1.6;
+    }
+
+    .why-section {
+      background: #ffffff;
+      color: #333;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .why-section h3 {
+      color: #ff512f;
+      margin-bottom: 10px;
+    }
+
+    .why-section p {
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .policy-section {
+      background: #fff3f5;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .policy-section a {
+      display: block;
+      margin: 6px 0;
+      text-decoration: none;
+      color: #ff512f;
+      font-weight: bold;
+    }
+
+    .social-icons {
+      margin-top: 25px;
+    }
+
+    .social-icons a {
+      margin: 0 12px;
+      font-size: 28px;
+      color: #fff;
+      background: #25D366;
+      padding: 12px;
+      border-radius: 50%;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .social-icons a.fb {
+      background: #1877F2;
+    }
+
+    .social-icons a.ig {
+      background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    }
+
+    .social-icons a:hover {
+      opacity: 0.85;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 16px;
+      color: white;
+    }
+
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Pay 1 Rupee to See How Many Rupees in This Account</h1>
-        
-        <div class="section">
-            <ul style="list-style: none; padding: 0; text-align: left;">
-                <li>✅ Click the button below</li>
-                <li>💳 Pay 1 Rupee securely via Razorpay</li>
-                <li>📊 See the updated balance</li>
-                <li>🔗 Share this with your friends</li>
-                <li>🛡️ Transactions are protected by Razorpay</li>
-            </ul> 
-              </div>
-              <br>
-             <center><h3>BLANCE:🔒 (want to know?)</h3></center>
-            <br>
-       <!-- Payment Button -->
-        <form>
-            <script src="https://checkout.razorpay.com/v1/payment-button.js" 
-                data-payment_button_id="pl_Q1VPKynGzRQl5H" async></script>
-        </form>
+  <div class="container">
+    <h1>Pay 1 Rupee to See How Many Rupees in This Account</h1>
 
-        <!-- Balance Display -->
-        
-        
-        <div class="section note">
-            <h2>NOTE</h2>
-            <p>This website is a digital financial application</p>
-            <p>This website is strictly follwing RBI guidelines.</p>
-            <p>All transactions are securely processed via Razorpay.</p>
-        </div>
-        
-        <div class="section description">
-            <h3>Why Pay ₹1?</h3>
-            <p>Experience a real-time balance update by contributing ₹1.</p>
-            <p>Your contribution directly increases the displayed balance.</p>
-            <p>Join and see the growing participation!</p>
-        </div>
-        
-        <div class="footer section">
-            <a href="https://contact-r1fk.onrender.com">Contact Us</a>
-            <a href="https://terms-conditions.onrender.com">Terms & Conditions</a>
-            <a href="https://privacy-policy-rog4.onrender.com">Privacy Policy</a>
-            <a href="https://wa.me/918790876817">WhatsApp</a>
-            <a href="https://www.facebook.com/">Facebook</a>
-            <a href="https://www.instagram.com/">Instagram</a>
-            <h2>Founded by Chelluboina Charan</h2>
-        </div>
+    <div class="section">
+      <ul>
+        <li>✅ Click the button below</li>
+        <li>💳 Pay 1 Rupee securely via Razorpay</li>
+        <li>📊 See the updated balance</li>
+        <li>🔗 Share this with your friends</li>
+        <li>🛡️ Transactions are protected by Razorpay</li>
+      </ul>
     </div>
 
-    
+    <h3 style="margin-top:20px;">BALANCE: 🔒 (want to know?)</h3>
+
+    <!-- Razorpay Payment Button -->
+    <form style="margin-top:15px;">
+      <script src="https://checkout.razorpay.com/v1/payment-button.js"
+        data-payment_button_id="pl_Q1VPKynGzRQl5H" async></script>
+    </form>
+
+    <!-- NOTE Section with Small Gap -->
+    <div class="note-section">
+      <h2>NOTE</h2>
+      <p>This website is a digital financial software application designed to give you a real-time experience.</p>
+      <p>We strictly follow all RBI guidelines for secure digital transactions.</p>
+      <p>All payments are processed securely via Razorpay with strong encryption & privacy protection.</p>
+    </div><br>
+
+    <!-- Why Pay 1 Rupee Section -->
+    <div class="why-section">
+      <h3>Why Pay ₹1?</h3>
+      <p>When you pay ₹1, you experience a live demonstration of balance update. Every rupee contributes to the shared visible balance, making it interactive and engaging. This is a unique concept to visualize contribution impact in real-time — simple yet satisfying!</p>
+    </div>
+
+    <!-- Policy Links -->
+    <div class="policy-section">
+      <a href="https://contact-r1fk.onrender.com">📞 Contact Us</a>
+      <a href="https://terms-conditions.onrender.com">📃 Terms & Conditions</a>
+      <a href="https://privacy-policy-rog4.onrender.com">🔐 Privacy Policy</a>
+    </div>
+
+    <!-- Social Icons (Real Looking) -->
+    <div class="social-icons">
+      <a href="https://wa.me/918790876817" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/" class="fb" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/" class="ig" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <footer>
+      <p>Founded by Chelluboina Charan</p>
+    </footer>
+  </div>
 </body>
 </html>
+
